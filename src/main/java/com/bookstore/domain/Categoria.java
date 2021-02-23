@@ -4,6 +4,7 @@
 package com.bookstore.domain;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -30,7 +31,7 @@ public class Categoria implements Serializable {
 	private String descricao;
 
 	@OneToMany(mappedBy = "categoria")
-	private List<Livro> livros;
+	private List<Livro> livros = new ArrayList<>();
 
 	public Categoria() {
 	}
