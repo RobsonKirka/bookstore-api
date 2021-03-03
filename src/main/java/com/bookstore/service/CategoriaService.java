@@ -3,6 +3,7 @@
  */
 package com.bookstore.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,10 @@ public class CategoriaService {
 		Optional<Categoria> categoria = categoriaRepository.findById(id);
 		return categoria.orElseThrow(() -> new EntidadeNaoEncontradaException(
 				"Objeto não encontrado. id: " + id + " Tipo:" + Categoria.class.getName()));
+	}
+	
+	public List<Categoria> findAll () {
+		return this.categoriaRepository.findAll();
 	}
 
 }
